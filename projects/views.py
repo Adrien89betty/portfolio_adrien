@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
-def projects():
-    pass
+def projects(request):
+    # Projects page.
+    return render(request, 'projects/projects.html')

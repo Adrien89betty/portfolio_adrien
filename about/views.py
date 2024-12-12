@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
-def about():
-    pass
+def about(request):
+    # About page.
+    return render(request, 'about/about.html')
