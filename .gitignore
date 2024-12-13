@@ -19,8 +19,9 @@ node_modules/
 __pycache__/
 *.pyo
 *.pyd
+*.pyc
 
-	# Config files and local parameters.
+# Config files and local parameters.
 *.local
 *.log
 *.pot
@@ -41,8 +42,8 @@ local_settings.py
 *.backup
 
 # Tests directories.
-test/
-tests/
+/test/
+/tests/
 
 # compilation and deployment files.
 dist/
@@ -58,4 +59,3 @@ media/
 # Sensitives config files.
 *.env
 .env.*
-
