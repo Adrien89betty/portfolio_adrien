@@ -30,6 +30,7 @@ __pycache__/
 *.DS_Store
 *.coverage
 local_settings.py
+projects/management/commands/
 
 # Log files.
 *.log
