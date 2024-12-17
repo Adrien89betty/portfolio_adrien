@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contact',
     # Third-party apps.
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
