@@ -31,6 +31,7 @@ __pycache__/
 *.coverage
 local_settings.py
 projects/management/commands/
+cv/management/commands/
 
 # Log files.
 *.log
