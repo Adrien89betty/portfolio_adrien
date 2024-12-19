@@ -1,4 +1,7 @@
 import os
+import shutil
+
+from django.conf import settings
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
@@ -138,3 +141,9 @@ class CVAPITestCase(APITestCase):
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(CV.objects.count(), 1)
+
+    def tearDown(self):
+        media_path = settings.MEDIA_ROOT
+        cv_files_path = os.path.join(media_path, "cv_files")
+        if os.path.exists(cv_files_path):
+            shutil.rmtree(cv_files_path)
