@@ -32,6 +32,7 @@ __pycache__/
 local_settings.py
 projects/management/commands/
 cv/management/commands/
+contact/management/commands/
 
 # Log files.
 *.log
