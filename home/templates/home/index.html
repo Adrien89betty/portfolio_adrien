@@ -1,12 +1,67 @@
-{% extends 'home/base.html' %}
+{% extends "home/base.html" %}
 
-{% block page_header %}
-
-  <h1>Title</h1>
-
-{% endblock page_header %}
+{% block title %}Accueil{% endblock %}
+{% block nav %}
+<div>
+  <div class="navbar">
+    <h4>À propos</h4>
+    <h4>Projets</h4>
+    <h4>Contact</h4>
+  </div>
+</div>
+{% endblock nav %}
 {% block content %}
+<div>
+    <div class="welcome">
+      <h1>Bonjour, je suis Adrien, développeur back-end.</h1>
+      <p>I help clients design their dreams, and then I make those dreams come true.</p>
+    </div>
 
-  <p>some text</p>
+    <div class="skills">
+      <h2>Skills</h2>
+      <div id="skills">
+          <h3>Hard skills</h3>
+          <div v-for="skill in hardSkills" :key="skill">{{ skill }}</div>
+          <h3>Soft skills</h3>
+          <div v-for="skill in softSkills" :key="skill">{{ skill }}</div>
+      </div>
+    </div>
 
-{% endblock content %}
+    <div class="projects">
+      <h2>Mes projets</h2>
+      <div id="projects">
+          <div v-for="project in projects" :key="project.id">{{ project.title }}</div>
+      </div>
+    </div>
+
+    <div id="sep">
+      <h1>white sep</h1>
+    </div>
+
+    <div class="contact">
+      <h2>Me contacter</h2>
+      <p>Montpellier, France</p>
+      <p>Email: adrienlevelle.contact@gmail.com</p>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+  <footer>
+    <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly.
+      Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
+  </footer>
+{% endblock footer %}
+
+<script>
+  new Vue({
+      el: "#app",
+      data: {
+          hardSkills: ["Python", "Django", "SQL"],
+          softSkills: ["Communication", "Collaboration", "Problem-Solving"],
+          projects: [
+              { id: 1, title: "Projet 1", description: "Description du projet 1" },
+              { id: 2, title: "Projet 2", description: "Description du projet 2" }
+          ]
+      }
+  });
+  </script>
