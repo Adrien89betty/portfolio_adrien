@@ -1,15 +1,13 @@
 {% extends "home/base.html" %}
 
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'home/css/home_styles.css' %}">
+{% endblock %}
+
 {% block title %}Accueil{% endblock %}
-{% block nav %}
-<div>
-  <div class="navbar">
-    <h4>À propos</h4>
-    <h4>Projets</h4>
-    <h4>Contact</h4>
-  </div>
-</div>
-{% endblock nav %}
+
 {% block content %}
 <div>
     <div class="welcome">
@@ -45,12 +43,6 @@
     </div>
 </div>
 {% endblock %}
-{% block footer %}
-  <footer>
-    <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly.
-      Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
-  </footer>
-{% endblock footer %}
 
 <script>
   new Vue({

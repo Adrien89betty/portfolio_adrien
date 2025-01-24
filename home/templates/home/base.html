@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Portfolio{% endblock %}</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
+    {% block custom_css %}{% endblock %}
     {% block extra_head %}{% endblock %}
 </head>
 <body>
     <header>
         {% block nav %}
+        <div>
+          <div class="navbar">
+            <h4>À propos</h4>
+            <h4>Projets</h4>
+            <h4>Contact</h4>
+          </div>
+        </div>
         {% endblock %}
     </header>
     <main id="app">
@@ -20,7 +28,9 @@
     </main>
     <footer>
         {% block footer %}
-        {% endblock %}
+          <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly.
+            Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
+        {% endblock footer %}
     </footer>
 </body>
 </html>

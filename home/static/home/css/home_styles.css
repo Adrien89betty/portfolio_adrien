@@ -1,29 +1,17 @@
-body {
-  margin: 0
-}
-
-.navbar {
-  background-color: #06002e;
-  color: #fffef9;
-}
-
-.navbar h4 {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
+/* home - welcome section */
 .welcome {
   background-color: #06002e;
   color: #fffef9;
   margin-block-start: 0;
 }
 
+/* home - skills section */
 .skills {
   background-color: #fffef9;
   color: #06002e;
 }
 
+/* home - projects section */
 .projects {
   background-color: #06002e;
   color: #fffef9;
@@ -36,12 +24,9 @@ body {
 
 }
 
+/* home - contact section */
 .contact {
   background-color: #06002e;
   color: #fffef9;
 }
 
-footer {
-  background-color: #06002e;
-  color: #fffef9;
-}

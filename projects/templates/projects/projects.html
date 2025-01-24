@@ -1,5 +1,11 @@
 {% extends 'home/base.html' %}
 
+{% load static %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'projects/css/projects_styles.css' %}">
+{% endblock %}
+
 {% block page_header %}
 
   <h1>Something will be here</h1>

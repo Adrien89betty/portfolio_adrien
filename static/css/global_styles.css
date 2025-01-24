@@ -1,0 +1,21 @@
+/* base.html */
+body {
+  margin: 0
+}
+
+/* navbar */
+.navbar {
+  background-color: #06002e;
+  color: #fffef9;
+}
+
+.navbar h4 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+footer {
+  background-color: #06002e;
+  color: #fffef9;
+}
