@@ -1,5 +1,6 @@
 /* base.html */
 body {
+  background-color: #06002e;
   margin: 0
 }
 
@@ -7,6 +8,8 @@ body {
 .navbar {
   background-color: #06002e;
   color: #fffef9;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navbar h4 {
