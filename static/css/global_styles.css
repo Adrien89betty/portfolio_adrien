@@ -6,17 +6,46 @@ body {
 
 /* navbar */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #06002e;
   color: #fffef9;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 10px 50px 10px 50px;
 }
 
-.navbar h4 {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+.nav-home a {
+  text-decoration: none;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fffef9;
 }
+
+.nav-home a:hover {
+  color: turquoise;
+  transition: 0.4s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fffef9;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links li a:hover {
+  color: turquoise;
+  transition: 0.3s ease;
+
+}
+
 
 footer {
   background-color: #06002e;

@@ -13,12 +13,15 @@
 <body>
     <header>
         {% block nav %}
-        <div>
-          <div class="navbar">
-            <h4>À propos</h4>
-            <h4>Projets</h4>
-            <h4>Contact</h4>
+        <div class="navbar">
+          <div class="nav-home">
+            <a href="{% url "home:index" %}">C:\</a>
           </div>
+          <ul class="nav-links">
+            <li><a href="{% url "about:about" %}">À propos</a></li>
+            <li><a href="">Projets</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
         </div>
         {% endblock %}
     </header>
