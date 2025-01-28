@@ -1,22 +1,74 @@
+/* Triangles */
+.triangle {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* left triangle */
+.triangle-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 650px 0 0 50vw;
+  border-color: transparent transparent transparent #fffef9;
+}
+
+/* right triangle */
+.triangle-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 650px 50vw 0 0;
+  border-color: transparent #fffef9 transparent transparent;
+}
+
 /* home - welcome section */
 .welcome {
+  position: relative;
+  height: calc(100vh + 150px);
+  overflow: hidden;
   background-color: #06002e;
   color: #fffef9;
   margin-block-start: 0;
+}
+
+.title-container {
+  margin-top: 100px;
 }
 
 .title-container img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  clip-path: inset(0px 10px 30px 0px); /* Haut, Droite, Bas, Gauche */
+  clip-path: inset(0px 10px 30px 0px);
   position: relative;
+}
+
+.hook-container {
+  margin-top: 100px;
+  margin-bottom: 308px;
+}
+
+.hook-container h2 {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
 /* home - skills section */
 .skills {
   background-color: #fffef9;
   color: #06002e;
+  margin-top: -20px;
 }
 
 /* home - projects section */
