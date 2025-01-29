@@ -17,6 +17,13 @@
       <div class="hook-container">
         <h2>I help clients design their dreams, and then I make those dreams come true.</h2>
       </div>
+      <div class="social-links">
+        <img src="{% static 'home/images/github_logo.svg' %}" alt="Github">
+        <img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin">
+      </div>
+      <div class="angles-down">
+        <img src="{% static 'home/images/angles_down.svg' %}" alt="Scroll down">
+      </div>
       <div class="triangle triangle-left"></div>
       <div class="triangle triangle-right"></div>
     </div>
@@ -24,10 +31,10 @@
     <div class="skills">
       <h2>Skills</h2>
       <div id="skills">
-          <h3>Hard skills</h3>
-          <div v-for="skill in hardSkills" :key="skill">{{ skill }}</div>
-          <h3>Soft skills</h3>
-          <div v-for="skill in softSkills" :key="skill">{{ skill }}</div>
+        <h3>Hard skills</h3>
+        <div v-for="skill in hardSkills" :key="skill">{{ skill }}</div>
+        <h3>Soft skills</h3>
+        <div v-for="skill in softSkills" :key="skill">{{ skill }}</div>
       </div>
     </div>
 

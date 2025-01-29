@@ -55,13 +55,41 @@
 
 .hook-container {
   margin-top: 100px;
-  margin-bottom: 308px;
+  margin-bottom: 115px;
 }
 
 .hook-container h2 {
   text-align: center;
   font-family: sans-serif;
   font-weight: lighter;
+}
+
+.social-links {
+  display: flex;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 105px;
+}
+
+.social-links img {
+  width: 40px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.angles-down {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.angles-down img {
+  width: 30px;
+  height: auto;
 }
 
 /* home - skills section */
