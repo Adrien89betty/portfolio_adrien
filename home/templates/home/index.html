@@ -29,12 +29,23 @@
     </div>
 
     <div class="skills">
-      <h2>Skills</h2>
-      <div id="skills">
-        <h3>Hard skills</h3>
-        <div v-for="skill in hardSkills" :key="skill">{{ skill }}</div>
-        <h3>Soft skills</h3>
-        <div v-for="skill in softSkills" :key="skill">{{ skill }}</div>
+      <div class="skills-titles">
+        <h2>Skills</h2>
+        <h4>En tant que développeur back-end, voici mes compétences...</h4>
+      </div>
+      <div class="skills-categories">
+        <div class="hard-skills">
+          <h3>Hard skills</h3>
+          <div>
+            <ul>
+              <li v-for="skill in hardSkills" :key="skill.id" v-text="skill.name"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="soft-skills">
+          <h3>Soft skills</h3>
+          {% comment %} <div v-for="skill in softSkills" :key="skill">{{ skill }}</div> {% endcomment %}
+        </div>
       </div>
     </div>
 
@@ -56,17 +67,3 @@
     </div>
 </div>
 {% endblock %}
-
-<script>
-  new Vue({
-      el: "#app",
-      data: {
-          hardSkills: ["Python", "Django", "SQL"],
-          softSkills: ["Communication", "Collaboration", "Problem-Solving"],
-          projects: [
-              { id: 1, title: "Projet 1", description: "Description du projet 1" },
-              { id: 2, title: "Projet 2", description: "Description du projet 2" }
-          ]
-      }
-  });
-  </script>
