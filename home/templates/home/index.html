@@ -21,9 +21,6 @@
         <img src="{% static 'home/images/github_logo.svg' %}" alt="Github">
         <img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin">
       </div>
-      <div class="angles-down">
-        <img src="{% static 'home/images/angles_down.svg' %}" alt="Scroll down">
-      </div>
       <div class="triangle triangle-left"></div>
       <div class="triangle triangle-right"></div>
     </div>
@@ -36,16 +33,24 @@
       <div class="skills-categories">
         <div class="hard-skills">
           <h3>Hard skills</h3>
-          <div>
-            <ul>
-              <li v-for="skill in hardSkills" :key="skill.id" v-text="skill.name"></li>
-            </ul>
+          <div class="hard-skills-grid">
+            <div v-for="skill in hardSkills" :key="skill.id" v-text="skill.name" class="skill-box">
+              {{ skill.name }}
+            </div>
           </div>
         </div>
+        <div class="skills-divider"></div>
         <div class="soft-skills">
           <h3>Soft skills</h3>
-          {% comment %} <div v-for="skill in softSkills" :key="skill">{{ skill }}</div> {% endcomment %}
+          <div class="soft-skills-grid">
+            <div v-for="skill in hardSkills" :key="skill.id" v-text="skill.name" class="skill-box">
+              {{ skill.name }}
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="btn-about-container">
+        <a href="{% url "about:about" %}" class="btn-about">En savoir plus</a>
       </div>
     </div>
 
