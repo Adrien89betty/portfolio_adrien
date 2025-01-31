@@ -171,6 +171,107 @@
   color: #ffffff;
 }
 
+.projects-title {
+  text-align: center;
+}
+
+.projects-title h2 {
+  font-size: 60px;
+  font-family: serif;
+  font-weight: normal;
+}
+
+/* projects - carousel */
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 800px;
+  height: 500px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.carousel-item {
+  flex: 0 0 25%; /* Affiche 4 items maximum */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: scale(1.1); /* Zoom sur le projet courant */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover .project-details {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 30px;
+}
+
+.next-btn {
+  right: 30px;
+}
+
+
 #sep {
   background-color: #ffffff;
   margin-top: 0;

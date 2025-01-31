@@ -40,25 +40,58 @@
         data() {
           return {
             hardSkills: [],
-            projects: []
+            projects: [],
+            hoveredProject: null,
+            currentIndex: 0,
           };
         },
         mounted() {
+          // Get skills from API
           fetch("/cv/api/skills/")
-              .then(response => {
-                  if (!response.ok) {
-                      throw new Error("Erreur dans la requête API");
-                  }
-                  return response.json();
-              })
-              .then(data => {
-                  this.hardSkills = data;
-              })
-              .catch(error => console.error("Erreur lors du chargement des compétences :", error));
-        }
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erreur dans la requête API");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              this.hardSkills = data;
+            })
+            .catch((error) =>
+              console.error("Erreur lors du chargement des compétences :", error)
+            );
 
+          // Get projects from API
+          fetch("/projects/api/projects/")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erreur dans la requête API des projets");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              this.projects = data;
+            })
+            .catch((error) =>
+              console.error("Erreur lors du chargement des projets :", error)
+            );
+  },
+        methods: {
+          scrollCarousel(direction) {
+            const wrapper = document.querySelector(".carousel-wrapper");
+            const itemWidth = wrapper.firstElementChild.offsetWidth + 20;
+            this.currentIndex += direction;
+
+            // Check limits
+            if (this.currentIndex < 0) this.currentIndex = 0;
+            if (this.currentIndex > this.projects.length - 1)
+              this.currentIndex = this.projects.length - 1;
+
+            wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`;
+          },
+        },
       });
       app.mount("#app");
-      </script>
+    </script>
 </body>
 </html>
