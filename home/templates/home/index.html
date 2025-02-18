@@ -67,7 +67,6 @@
             @mouseover="hoveredProject = project.id"
             @mouseleave="hoveredProject = null"
           >
-            <!-- Image ou couleur représentant le projet -->
             <div class="project-image" :style="{ backgroundColor: project.color }">
               <div class="project-details" v-if="hoveredProject === project.id">
                 <h3>{{ project.title }}</h3>
@@ -80,11 +79,9 @@
             </div>
           </div>
         </div>
-        <!-- Boutons pour naviguer -->
         <button class="carousel-btn prev-btn" @click="scrollCarousel(-1)">&#8249;</button>
         <button class="carousel-btn next-btn" @click="scrollCarousel(1)">&#8250;</button>
       </div>
-
     </div>
 
     <div id="sep">

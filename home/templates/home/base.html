@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Portfolio{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Portfolio
+      {% endblock %}
+    </title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="{% static 'css/global_styles.css' %}">
-    {% block custom_css %}{% endblock %}
-    {% block extra_head %}{% endblock %}
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/global_styles.css' %}" />
+    {% block custom_css %}
+
+    {% endblock %}
+    {% block extra_head %}
+
+    {% endblock %}
+  </head>
+  <body>
     <header>
-        {% block nav %}
+      {% block nav %}
         <div class="navbar">
           <div class="nav-home">
-            <a href="{% url "home:index" %}">C:\</a>
+            <a href="{% url 'home:index' %}">C:\</a>
           </div>
           <ul class="nav-links">
-            <li><a href="{% url "about:about" %}">À propos</a></li>
-            <li><a href="">Projets</a></li>
-            <li><a href="">Contact</a></li>
+            <li>
+              <a href="{% url 'about:about' %}">À propos</a>
+            </li>
+            <li>
+              <a href="">Projets</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
           </ul>
         </div>
-        {% endblock %}
+      {% endblock %}
     </header>
     <main id="app">
-        {% block content %}
-        {% endblock %}
+      {% block content %}
+
+      {% endblock %}
     </main>
     <footer>
-        {% block footer %}
-          <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly.
-            Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
-        {% endblock footer %}
+      {% block footer %}
+        <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
+      {% endblock %}
     </footer>
     <script>
       const app = Vue.createApp({
@@ -42,56 +56,48 @@
             hardSkills: [],
             projects: [],
             hoveredProject: null,
-            currentIndex: 0,
-          };
+            currentIndex: 0
+          }
         },
         mounted() {
           // Get skills from API
-          fetch("/cv/api/skills/")
+          fetch('/cv/api/skills/')
             .then((response) => {
               if (!response.ok) {
-                throw new Error("Erreur dans la requête API");
+                throw new Error('Erreur dans la requête API')
               }
-              return response.json();
+              return response.json()
             })
             .then((data) => {
-              this.hardSkills = data;
+              this.hardSkills = data
             })
-            .catch((error) =>
-              console.error("Erreur lors du chargement des compétences :", error)
-            );
+            .catch((error) => console.error('Erreur lors du chargement des compétences :', error))
 
           // Get projects from API
-          fetch("/projects/api/projects/")
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Erreur dans la requête API des projets");
-              }
-              return response.json();
-            })
+          fetch('/projects/api/projects/')
+            .then((response) => response.json())
             .then((data) => {
-              this.projects = data;
+              console.log('Projets API reçus :', data)
+              this.projects = Array.isArray(data) ? [...data] : []
             })
-            .catch((error) =>
-              console.error("Erreur lors du chargement des projets :", error)
-            );
-  },
+            .catch((error) => console.error('Erreur lors du chargement des projets :', error))
+        },
         methods: {
           scrollCarousel(direction) {
-            const wrapper = document.querySelector(".carousel-wrapper");
-            const itemWidth = wrapper.firstElementChild.offsetWidth + 20;
-            this.currentIndex += direction;
+            const wrapper = document.querySelector('.carousel-wrapper')
+            const itemWidth = wrapper.firstElementChild.offsetWidth + 20
+            this.currentIndex += direction
 
-            // Check limits
-            if (this.currentIndex < 0) this.currentIndex = 0;
-            if (this.currentIndex > this.projects.length - 1)
-              this.currentIndex = this.projects.length - 1;
+            if (this.currentIndex < 0) this.currentIndex = 0
+            if (this.currentIndex > this.projects.length - 1) {
+              this.currentIndex = this.projects.length - 1
+            }
 
-            wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`;
-          },
-        },
-      });
-      app.mount("#app");
+            wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`
+          }
+        }
+      })
+      app.mount('#app')
     </script>
-</body>
+  </body>
 </html>
