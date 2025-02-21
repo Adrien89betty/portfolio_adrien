@@ -57,7 +57,7 @@
             projects: [],
             hoveredProject: null,
             currentIndex: 0,
-            interval: null,
+            interval: null
           };
         },
         mounted() {
@@ -139,9 +139,10 @@
               const itemWidth = wrapper.firstElementChild.offsetWidth + 20;
               wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`;
             }
-          },
-        },
+          }
+        }
       });
+
       app.mount("#app");
     </script>
   </body>
