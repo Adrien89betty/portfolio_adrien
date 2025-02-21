@@ -58,7 +58,7 @@
       <div class="projects-title">
         <h2>Mes projets</h2>
       </div>
-      <div class="carousel">
+      <div class="carousel" @mouseenter="stopAutoScroll" @mouseleave="resumeAutoScroll">
         <div class="carousel-wrapper">
           <div
             v-for="project in projects"
@@ -68,6 +68,7 @@
             @mouseleave="hoveredProject = null"
           >
             <div class="project-image" :style="{ backgroundColor: project.color }">
+              <h3>Project title</h3>
               <div class="project-details" v-if="hoveredProject === project.id">
                 <h3>{{ project.title }}</h3>
                 <p>{{ project.description }}</p>
@@ -78,6 +79,14 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="pagination">
+          <span
+            v-for="(project, index) in projects"
+            :key="index"
+            @click="currentIndex = index"
+            :class="{ active: index === currentIndex }"
+          ></span>
         </div>
         <button class="carousel-btn prev-btn" @click="scrollCarousel(-1)">&#8249;</button>
         <button class="carousel-btn next-btn" @click="scrollCarousel(1)">&#8250;</button>

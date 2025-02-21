@@ -169,6 +169,7 @@
 .projects {
   background-color: #06002e;
   color: #ffffff;
+  margin-bottom: 70px;
 }
 
 .projects-title {
@@ -184,9 +185,10 @@
 /* projects - carousel */
 .carousel {
   position: relative;
-  width: 100%;
+  width: 500px;
+  margin: auto;
   overflow: hidden;
-  background-color: #111;
+  background-color: #06002e;
   padding: 20px;
 }
 
@@ -197,17 +199,18 @@
 }
 
 .carousel-item {
-  flex: 0 0 250px;
+  flex: 0 0 500px;
   height: 300px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
-  background-color: #333;
+  background-color: lightgrey;
+  color: #06002e;
   transition: 0.3s;
 }
 
 .carousel-item:hover {
   transform: scale(1.05);
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px 2px rgba(230, 230, 230, 0.7);
 }
 
 .project-image {
@@ -241,6 +244,55 @@
   opacity: 1;
 }
 
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: -15px 10px;
+  border-radius: 50%;
+  z-index: 10;
+  font-size: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination span {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination span.active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+/* white section */
 #sep {
   background-color: #ffffff;
   margin-top: 0;
