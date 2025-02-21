@@ -292,14 +292,54 @@
   transform: scale(1.2);
 }
 
+.btn-discover-projects-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-discover-projects {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 10px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: serif;
+  font-weight: lighter;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-discover-projects:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  color: #06002e;
+}
+
 /* white section */
 #sep {
   background-color: #ffffff;
   margin-top: 0;
+  padding: 20px;
 }
 
 /* home - contact section */
 .contact {
   background-color: #06002e;
   color: #ffffff;
+}
+
+.contact-container {
+  display: flex;
+}
+
+.contact-map {
+  border: solid 1px #ffffff;
+  background-color: rgb(253, 253, 207);
+  width: 400px;
+  height: 400px;
 }
