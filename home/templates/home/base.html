@@ -57,7 +57,8 @@
             projects: [],
             hoveredProject: null,
             currentIndex: 0,
-            interval: null
+            interval: null,
+            copied: false
           };
         },
         mounted() {
@@ -139,6 +140,18 @@
               const itemWidth = wrapper.firstElementChild.offsetWidth + 20;
               wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`;
             }
+          },
+
+          // Email copy feature in contact section
+          copyEmail() {
+            const emailText = "adrienleveille.contact@gmail.com";
+            navigator.clipboard.writeText(emailText).then(() => {
+              this.copied = true;
+
+              setTimeout(() => {
+                this.copied = false;
+              }, 2000);
+            }).catch(err => console.error("Erreur lors de la copie :", err));
           }
         }
       });

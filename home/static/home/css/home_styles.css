@@ -333,13 +333,110 @@
   color: #ffffff;
 }
 
+.contact h2 {
+  font-size: 60px;
+  font-family: serif;
+  font-weight: normal;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .contact-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
 .contact-map {
   border: solid 1px #ffffff;
   background-color: rgb(253, 253, 207);
-  width: 400px;
-  height: 400px;
+  width: 430px;
+  height: 430px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.infos-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+.infos-container p {
+  font-family: sans-serif;
+}
+
+.infos-links {
+  display: flex;
+  justify-content: left;
+  gap: 50px;
+}
+
+.infos-links img {
+  width: 30px;
+  height: auto;
+}
+
+.infos-container p {
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+/* Email copy */
+.copy-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid #ffffff; */
+  border-radius: 5px;
+  padding: 0 10px;
+  padding-left: 0;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.copy-btn-container:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#email {
+  font-size: 16px;
+  color: inherit;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn img {
+  width: 20px;
+  height: auto;
+}
+
+.copy-btn:hover {
+  transform: scale(1.2);
+}
+
+#copy-message {
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.contact-form {
+  border: solid 1px #ffffff;
+  border-radius: 5px;
+  background-color: grey;
+  width: 700px;
+  height: 300px;
 }
