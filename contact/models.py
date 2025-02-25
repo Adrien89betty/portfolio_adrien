@@ -7,4 +7,4 @@ class ContactMessage(models.Model):
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.name} on {self.sent_at}"
+        return f"Message from {self.name} on {self.sent_at}\nMessage: {self.message}"

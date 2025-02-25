@@ -9,7 +9,8 @@ router.register(r'messages', ContactMessageViewSet, basename='contactmessage')
 app_name = 'contact'
 urlpatterns = [
     # Contact form.
-    path('', views.contact_form, name='contact_form'),
+    path('form', views.contact_form, name='contact_form'),
+    path("submit/", views.contact_view, name="contact_submit"),
     # API REST
     path('api/', include(router.urls)),
 ]

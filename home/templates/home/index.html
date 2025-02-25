@@ -112,10 +112,26 @@
               <p v-else id="copy-message">Copié !</p>
             </button>
           </div>
-
           <p>Où si vous préférez, directement via ce formulaire. 👇</p>
           <div class="contact-form">
+              <form method="POST" action="{% url 'contact:contact_submit' %}">
+                  {% csrf_token %}
 
+                  <div class="form-group">
+                      {{ form.name }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form.email }}
+                  </div>
+
+                  <div class="form-group">
+                      {{ form.message }}
+                  </div>
+
+                  <button type="submit" class="btn-submit">Envoyer</button>
+              </form>
+          </div>
           </div>
         </div>
       </div>
