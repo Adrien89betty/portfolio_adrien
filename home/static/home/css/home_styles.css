@@ -367,17 +367,6 @@
   font-family: sans-serif;
 }
 
-.infos-links {
-  display: flex;
-  justify-content: left;
-  gap: 50px;
-}
-
-.infos-links img {
-  width: 30px;
-  height: auto;
-}
-
 .infos-container p {
   font-family: sans-serif;
   font-weight: lighter;

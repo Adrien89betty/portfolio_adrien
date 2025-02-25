@@ -23,7 +23,7 @@
       {% block nav %}
         <div class="navbar">
           <div class="nav-home">
-            <a href="{% url 'home:index' %}">C:\</a>
+            <a href="{% url 'home:index' %}"><img src="{% static 'home/images/house_icon.svg' %}" alt="Home button"></a>
           </div>
           <ul class="nav-links">
             <li>
@@ -46,7 +46,13 @@
     </main>
     <footer>
       {% block footer %}
-        <p>Loosely designed in Figma and coded in Visual Studio Code by yours truly. Built with Next.js and Tailwind CSS, deployed with Vercel. All text is set in the Inter typeface.</p>
+      <div class="footer-container">
+        <div class="infos-links">
+          <img src="{% static 'home/images/github_logo.svg' %}" alt="Github">
+          <img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin">
+        </div>
+        <p>Site web créé avec Django et Vue.js, hébergé sur Heroku.</p>
+      </div>
       {% endblock %}
     </footer>
     <script>
