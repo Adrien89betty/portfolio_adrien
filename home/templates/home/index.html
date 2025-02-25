@@ -114,23 +114,23 @@
           </div>
           <p>Où si vous préférez, directement via ce formulaire. 👇</p>
           <div class="contact-form">
-              <form method="POST" action="{% url 'contact:contact_submit' %}">
-                  {% csrf_token %}
+            <form method="POST" action="{% url 'contact:contact_submit' %}">
+                {% csrf_token %}
 
-                  <div class="form-group">
-                      {{ form.name }}
-                  </div>
+                <div class="form-group">
+                    {{ form.name }}
+                </div>
 
-                  <div class="form-group">
-                      {{ form.email }}
-                  </div>
+                <div class="form-group">
+                    {{ form.email }}
+                </div>
 
-                  <div class="form-group">
-                      {{ form.message }}
-                  </div>
+                <div class="form-group">
+                    {{ form.message }}
+                </div>
 
-                  <button type="submit" class="btn-submit">Envoyer</button>
-              </form>
+                <button type="submit" class="btn-submit">Envoyez votre message !</button>
+            </form>
           </div>
           </div>
         </div>

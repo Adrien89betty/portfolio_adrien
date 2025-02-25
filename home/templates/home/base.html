@@ -64,10 +64,17 @@
             hoveredProject: null,
             currentIndex: 0,
             interval: null,
-            copied: false
+            copied: false,
+            contact: {
+              name: "",
+              email: "",
+              message: ""
+            },
+            submitButtonText: "Envoyez votre message !"
           };
         },
         mounted() {
+          console.log(this.submitButtonText)
           // Fecth skills from the API
           fetch("/cv/api/skills/")
             .then((response) => {
@@ -158,7 +165,7 @@
                 this.copied = false;
               }, 2000);
             }).catch(err => console.error("Erreur lors de la copie :", err));
-          }
+          },
         }
       });
 
