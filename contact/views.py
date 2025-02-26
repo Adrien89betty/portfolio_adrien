@@ -3,6 +3,8 @@ from rest_framework import viewsets
 from .models import ContactMessage
 from .serializers import ContactMessageSerializer
 from .forms import ContactMessageForm
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 class ContactMessageViewSet(viewsets.ModelViewSet):
     queryset = ContactMessage.objects.all().order_by('-sent_at')
@@ -15,12 +17,12 @@ def contact_form(request):
 
 
 def contact_view(request):
-    form = ContactMessageForm()
-
     if request.method == "POST":
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("home:index")
+            return JsonResponse({"success": True, "message": "Votre message a bien été envoyé !"})
+        else:
+            return JsonResponse({"success": False, "message": "Veuillez corriger les erreurs du formulaire."})
 
-    return render(request, "contact/contact.html", {"form": form})
+    return JsonResponse({"success": False, "message": "Méthode non autorisée."})

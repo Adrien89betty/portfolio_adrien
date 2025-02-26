@@ -477,3 +477,22 @@ textarea.form-control {
   transform: translateY(-2px);
   color: #06002e;
 }
+
+/* Form message */
+.hidden {
+  display: none;
+}
+
+.success-message {
+  color: green;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}

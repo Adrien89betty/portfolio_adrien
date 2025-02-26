@@ -114,7 +114,7 @@
           </div>
           <p>Où si vous préférez, directement via ce formulaire. 👇</p>
           <div class="contact-form">
-            <form method="POST" action="{% url 'contact:contact_submit' %}">
+            <form id="contact-form" method="POST" action="{% url 'contact:contact_submit' %}">
                 {% csrf_token %}
 
                 <div class="form-group">
@@ -128,8 +128,10 @@
                 <div class="form-group">
                     {{ form.message }}
                 </div>
-
                 <button type="submit" class="btn-submit">Envoyez votre message !</button>
+                <div>
+                  <p id="form-message" class="hidden"></p>
+                </div>
             </form>
           </div>
           </div>
@@ -137,4 +139,7 @@
       </div>
     </div>
 </div>
+{% endblock %}
+{% block extra_js %}
+  <script src="{% static 'contact/js/contact_form.js' %}"></script>
 {% endblock %}

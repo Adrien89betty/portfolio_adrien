@@ -121,10 +121,10 @@
 
           // Starts auto scroll
           startAutoScroll() {
-            if (this.interval) return; // Évite de créer plusieurs intervalles
+            if (this.interval) return;
             this.interval = setInterval(() => {
               this.scrollCarousel(1);
-            }, 3000); // Défilement toutes les 3 secondes
+            }, 3000);
           },
 
           // Stop auto scroll when mouse is hover the carousel
@@ -171,5 +171,7 @@
 
       app.mount("#app");
     </script>
+  {% block extra_js %}
+  {% endblock %}
   </body>
 </html>
