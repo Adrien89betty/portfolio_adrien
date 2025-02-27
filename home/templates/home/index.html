@@ -8,6 +8,11 @@
 
 {% block title %}Accueil{% endblock %}
 
+{% block extra_head %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endblock extra_head %}
+
 {% block content %}
 <div>
     <div class="welcome">
@@ -103,6 +108,8 @@
       <h2>Contactez-moi</h2>
       <div class="contact-container">
         <div class="contact-map">
+          <div id="map">
+          </div>
         </div>
         <div class="infos-container">
           <div class="copy-btn-container">
@@ -142,4 +149,5 @@
 {% endblock %}
 {% block extra_js %}
   <script src="{% static 'contact/js/contact_form.js' %}"></script>
+  <script src="{% static 'contact/js/map.js' %}"></script>
 {% endblock %}
