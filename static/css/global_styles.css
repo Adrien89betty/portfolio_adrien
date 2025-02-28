@@ -25,25 +25,45 @@ body {
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 30px;
-  margin-left: 0;
+  list-style: none;
   padding: 0;
 }
 
-.nav-links li a {
-  font-family: serif;
-  font-weight: lighter;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 20px;
+.nav-links li {
+  position: relative;
 }
 
-.nav-links li a:hover {
-  text-shadow: #ffffff 1px 0 10px;
+.nav-links a {
+  text-decoration: none;
+  font-family: sans-serif;
   color: white;
-  transition: 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #22cfff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #22cfff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 footer {
@@ -75,9 +95,9 @@ footer {
 .infos-links img {
   width: 20px;
   height: auto;
-  transition: 2.3 ease;
 }
 
 .infos-links img:hover {
   transform: scale(1.2);
+  transition: all 0.3s ease;
 }

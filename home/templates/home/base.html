@@ -30,10 +30,10 @@
               <a href="{% url 'about:about' %}">À propos</a>
             </li>
             <li>
-              <a href="">Projets</a>
+              <a href="{% url 'projects:projects' %}">Projets</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="{% url "contact:contact_form" %}">Contact</a>
             </li>
           </ul>
         </div>
@@ -48,8 +48,8 @@
       {% block footer %}
       <div class="footer-container">
         <div class="infos-links">
-          <img src="{% static 'home/images/github_logo.svg' %}" alt="Github">
-          <img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin">
+          <a href="https://github.com/Adrien89betty" target="_blank"><img src="{% static 'home/images/github_logo.svg' %}" alt="Github"></a>
+          <a href="https://www.linkedin.com/in/adrienleveille/" target="_blank"><img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin"></a>
         </div>
         <p>Site web créé avec Django et Vue.js, hébergé sur Heroku.</p>
       </div>
