@@ -6,14 +6,40 @@
 <link rel="stylesheet" href="{% static 'about/css/about_styles.css' %}">
 {% endblock %}
 
+{% block title %}À propos{% endblock %}
+
 {% block page_header %}
-
   <h1>About me</h1>
-
 {% endblock page_header %}
-{% block content %}
-  <div class="about-content">
-    <p>Description about me</p>
-  </div>
 
-{% endblock content %}
+{% block content %}
+  <div class="about-container">
+    <div class="about-photo">
+      <img src="{% static 'about/images/adrien_photo.jpg' %}" alt="Adrien Leveille">
+    </div>
+    <div class="about-content">
+      <h1>Qui suis-je ?</h1>
+      <p>
+        Nisi amet laboris amet fugiat consectetur est deserunt aliquip aliqua veniamadipisicing cupidatat proident. Lorem sunt aliquip et quis id sunt. Enim esseex aute nisi consectetur pariatur fugiat.
+      </p>
+      <p>
+        Dolore commodo do consequat veniam velit mollit in eiusmod. Voluptate quisnulla cillum laboris cupidatat elit nisi irure irure non deserunt. Laborum doirure enim est.
+      </p>
+      <p>
+        Pariatur est velit esse sint velit incididunt. Nisi aute id eu aute autecupidatat cillum anim proident anim eiusmod ipsum. Quis pariatur non fugiatsit velit quis ea. Laboris voluptate labore ea occaecat eu magna sunt eiusmodreprehenderit esse consequat et nostrud. Culpa sunt esse nisi veniam ea euquis ex sunt laboris nulla cupidatat Lorem. Amet aliqua qui excepteur et utnon exercitation exercitation exercitation.
+      </p>
+    </div>
+  </div>
+  <div class="btns-container">
+    <div class="btn-cv-container">
+      <a href="{% static 'about/files/cv_adrien_leveille_backend.pdf' %}" download class="btn-cv">
+        Télécharger mon CV
+      </a>
+    </div>
+    <div class="btn-contact-container">
+      <a href="{% url 'home:index' %}#contact-form" class="btn-contact">
+        Me contacter
+      </a>
+    </div>
+  </div>
+  {% endblock content %}

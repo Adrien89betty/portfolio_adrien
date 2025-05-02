@@ -1,3 +1,96 @@
-.about-content {
+/* .about-content {
   color: #ffffff;
+} */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.about-photo {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+  flex: 2 1 400px;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #ffffff;
+  font-family: serif;
+  font-weight: lighter;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 200px;
+  gap: 50px;
+}
+
+.btn-cv-container, .btn-contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.btn-cv {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: #22cfff;
+  text-align: center;
+  padding: 10px 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: serif;
+  font-weight: lighter;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-cv:hover {
+  background-color: #ffffff;
+  color: #06002e;
+}
+
+.btn-contact {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 10px;
+  width: 200px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: serif;
+  font-weight: lighter;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:hover {
+  background-color: #ffffff;
+  color: #06002e;
 }
