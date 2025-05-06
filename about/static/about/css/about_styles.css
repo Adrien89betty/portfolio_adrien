@@ -65,7 +65,7 @@
   width: 200px;
   border-radius: 10px;
   text-decoration: none;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: lighter;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
@@ -84,7 +84,7 @@
   width: 200px;
   border-radius: 10px;
   text-decoration: none;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: lighter;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
