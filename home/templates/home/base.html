@@ -30,7 +30,7 @@
               <a href="{% url 'about:about' %}">À propos</a>
             </li>
             <li>
-              <a href="{% url 'projects:projects' %}">Projets</a>
+              <a href="{% url 'home:index' %}#projects-section">Projets</a>
             </li>
             <li>
               <a href="{% url 'home:index' %}#contact-form">Contact</a>
@@ -71,7 +71,7 @@
             submitButtonText: "Envoyez votre message !"
           };
         },
-        
+
         mounted() {
           console.log(this.submitButtonText)
           // Fecth skills from the API
