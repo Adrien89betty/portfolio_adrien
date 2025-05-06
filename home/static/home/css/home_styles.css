@@ -138,7 +138,7 @@
   box-shadow: 0 0 10px 0 rgba(6, 0, 46, 0.10);
   color: #06002e;
   padding: 15px 25px;
-  border-radius: 50px;
+  border-radius: 10px;
   text-align: center;
   font-weight: lighter;
   font-size: 20px;
@@ -182,7 +182,7 @@
   width: 200px;
   border-radius: 10px;
   text-decoration: none;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: lighter;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
@@ -198,6 +198,8 @@
   background-color: #06002e;
   color: #ffffff;
   margin-bottom: 70px;
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .projects-title {
@@ -210,139 +212,129 @@
   font-weight: normal;
 }
 
-/* projects - carousel */
-.carousel {
-  position: relative;
-  width: 500px;
-  margin: auto;
-  overflow: hidden;
-  background-color: #06002e;
-  padding: 20px;
+/* Card-grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  justify-content: center;
 }
 
-.carousel-wrapper {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  flex: 0 0 500px;
+.project-card {
+  background: #06002e;
+  color: #ffffff;
+  border: #ffffff solid 2px;
   height: 300px;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: lightgrey;
-  color: #06002e;
-  transition: 0.3s;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 8px 2px rgba(230, 230, 230, 0.7);
+.project-card:hover {
+  opacity: 0.3;
+  transform: translateY(-4px);
 }
 
-.project-image {
-  position: relative;
+.card-thumb {
+  background-color: lightgray;
   width: 100%;
-  height: 100%;
-  background-size: cover;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card-title {
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* overlay - hide and blur background */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-details {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15px;
-  opacity: 0;
-  transition: opacity 0.3s;
+  z-index: 1000;
 }
 
-.carousel-item:hover .project-details {
-  opacity: 1;
+/* la carte centrale */
+.modal-content {
+  position: relative;
+  background: #06002e;
+  border: #ffffff solid 2px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 1200px;
+  max-height: fit-content;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
-.carousel-btn {
+.modal-thumb {
+  background-color: lightgray;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.p-technos {
+  margin-bottom: 50px;
+}
+
+/* Close button */
+.modal-close {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
   border: none;
+  font-size: 1.2rem;
   cursor: pointer;
-  padding: 10px;
-  margin: -15px 10px;
-  border-radius: 50%;
-  z-index: 10;
-  font-size: 20px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  color: #ffffff;
 }
 
-.carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-.pagination {
+.modal-links {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  gap: 40px;
 }
 
-.pagination span {
-  width: 12px;
-  height: 12px;
-  margin: 5px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.pagination span.active {
-  background: rgba(255, 255, 255, 0.9);
-  transform: scale(1.2);
-}
-
-.btn-discover-projects-container {
+.btn-github-container, .btn-demo-container {
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  text-align: center;
 }
 
-.btn-discover-projects {
+.btn-github-link, .btn-demo-link {
   border: 2px solid #ffffff;
   color: #ffffff;
-  text-align: center;
   padding: 10px 10px;
   width: 200px;
   border-radius: 10px;
   text-decoration: none;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: lighter;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
 
-.btn-discover-projects:hover {
-  background-color: #ffffff;
+.btn-github-link:hover, .btn-demo-link:hover {
   color: #06002e;
+  background-color: #ffffff;
 }
 
 /* white section */
@@ -396,10 +388,6 @@
   width: 100%;
   max-width: 700px;
   padding: 20px;
-}
-
-.infos-container p {
-  font-family: sans-serif;
 }
 
 .infos-container p {
@@ -491,6 +479,7 @@ textarea.form-control {
 
 .btn-submit {
   border: 2px solid #ffffff;
+  background-color: #22cfff;
   color: #ffffff;
   text-align: center;
   padding: 12px 20px;
@@ -498,16 +487,16 @@ textarea.form-control {
   margin: 40px auto 0 auto;
   border-radius: 10px;
   text-decoration: none;
-  font-family: serif;
+  font-family: sans-serif;
   font-weight: lighter;
   font-size: 20px;
   transition: all 0.3s ease-in-out;
   display: block;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
   background-color: #ffffff;
-  transform: translateY(-2px);
   color: #06002e;
 }
 

@@ -61,9 +61,7 @@
           return {
             hardSkills: [],
             projects: [],
-            hoveredProject: null,
-            currentIndex: 0,
-            interval: null,
+            modalProject: null,
             copied: false,
             contact: {
               name: "",
@@ -73,6 +71,7 @@
             submitButtonText: "Envoyez votre message !"
           };
         },
+        
         mounted() {
           console.log(this.submitButtonText)
           // Fecth skills from the API
@@ -92,67 +91,25 @@
 
           // fecth projects from the API
           fetch("/projects/api/projects/")
-            .then((response) => response.json())
-            .then((data) => {
-              this.projects = Array.isArray(data) ? [...data] : [];
-              setTimeout(() => {
-                this.startAutoScroll();
-              }, 1000); // Wait 1s before launching the auto scroll
+            .then(r => r.json())
+            .then(data => {
+              this.projects = data.map(p => ({
+                ...p,
+                image_url: p.image || null
+              }));
             })
-            .catch((error) =>
-              console.error("Erreur lors du chargement des projets :", error)
-            );
+            .catch(err => console.error(err));
         },
+
         methods: {
-          scrollCarousel(direction) {
-            if (!this.projects.length) return;
-
-            this.currentIndex += direction;
-
-            // Infinite scroll (go back to the first project after the last one)
-            if (this.currentIndex < 0) {
-              this.currentIndex = this.projects.length - 1;
-            } else if (this.currentIndex >= this.projects.length) {
-              this.currentIndex = 0;
-            }
-
-            this.updateCarouselPosition();
+          // Open the modal by opening the project by his ID
+          openModal(id) {
+            this.modalProject = this.projects.find(p => p.id === id) || null;
           },
 
-          // Starts auto scroll
-          startAutoScroll() {
-            if (this.interval) return;
-            this.interval = setInterval(() => {
-              this.scrollCarousel(1);
-            }, 3000);
-          },
-
-          // Stop auto scroll when mouse is hover the carousel
-          stopAutoScroll() {
-            clearInterval(this.interval);
-            this.interval = null;
-          },
-
-          // Resume auto scroll when mouse leaves the carousel
-          resumeAutoScroll() {
-            if (!this.interval) {
-              this.startAutoScroll();
-            }
-          },
-
-          // Change slides directly via pagination
-          goToSlide(index) {
-            this.currentIndex = index;
-            this.updateCarouselPosition();
-          },
-
-          // Update carousel position after a manual changes
-          updateCarouselPosition() {
-            const wrapper = document.querySelector(".carousel-wrapper");
-            if (wrapper && wrapper.firstElementChild) {
-              const itemWidth = wrapper.firstElementChild.offsetWidth + 20;
-              wrapper.style.transform = `translateX(${-this.currentIndex * itemWidth}px)`;
-            }
+          // Close the modal
+          closeModal() {
+            this.modalProject = null;
           },
 
           // Email copy feature in contact section
