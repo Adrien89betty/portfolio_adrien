@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
   const form = document.getElementById("contact-form");
   const messageDisplay = document.getElementById("form-message");
+  const csrftoken = getCookie('csrftoken');
 
   if (!form) return;
 
@@ -12,11 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
       submitButton.disabled = true;
 
       fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-              "X-Requested-With": "XMLHttpRequest"
-          }
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": csrftoken    
+        },
+        body: formData
       })
       .then(response => response.json())
       .then(data => {
