@@ -4,6 +4,10 @@
     {% load static %}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+KR:wght@200..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     <title>
       {% block title %}
         Portfolio
@@ -22,10 +26,17 @@
     <header>
       {% block nav %}
         <div class="navbar">
-          <div class="nav-home">
-            <a href="{% url 'home:index' %}"><img src="{% static 'home/images/house_icon.svg' %}" alt="Home button"></a>
-          </div>
+          <h6><span>Adrien</span> L'éveillé</h6>
+          <!-- hamburger button menu -->
+          <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <ul class="nav-links">
+            <li>
+              <a href="{% url 'home:index' %}">Accueil</a>
+            </li>
             <li>
               <a href="{% url 'about:about' %}">À propos</a>
             </li>
@@ -33,7 +44,7 @@
               <a href="{% url 'home:index' %}#projects-section">Projets</a>
             </li>
             <li>
-              <a href="{% url 'home:index' %}#contact-form">Contact</a>
+              <a href="{% url 'home:index' %}#contact-section">Contact</a>
             </li>
           </ul>
         </div>
@@ -127,6 +138,26 @@
       });
 
       app.mount("#app");
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector(".hamburger");
+        const nav = document.querySelector(".nav-links");
+
+        btn.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          btn.classList.toggle("open", isOpen);
+          btn.setAttribute("aria-expanded", isOpen);
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+          link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            btn.classList.remove("open");
+            btn.setAttribute("aria-expanded", false);
+          });
+        });
+      });
     </script>
   {% block extra_js %}
   {% endblock %}

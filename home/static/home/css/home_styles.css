@@ -1,44 +1,7 @@
-/* Triangles */
-.triangle {
-  position: absolute;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-/* left triangle */
-.triangle-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 650px 0 0 50vw;
-  border-color: transparent transparent transparent #ffffff;
-
-  z-index: 1;
-}
-
-/* right triangle */
-.triangle-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 650px 50vw 0 0;
-  border-color: transparent #ffffff transparent transparent;
-
-  z-index: 1;
-}
-
-/* home - welcome section */
+/* ============== HOME - WELCOME SECTION ===============*/
+/* ============== MOBILE FIRST (< 421px) ============== */
 .welcome {
-  position: relative;
-  height: calc(100vh + 150px);
+  height: 120vh;
   overflow: hidden;
   background-color: #06002e;
   color: #ffffff;
@@ -46,214 +9,305 @@
 }
 
 .title-container {
-  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 8vw;
+  margin-top: 15vh;
 }
 
-.title-container img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  clip-path: inset(0px 10px 30px 0px);
-  position: relative;
+.title-container h1 {
+  color: #ffffff;
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.title-container h1 span {
+  color: #5ce1e6;
 }
 
 .hook-container {
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 10vh;
+  padding: 2vh 8vw;
 }
 
 .hook-container h2 {
   text-align: center;
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  font-size: 1.1em;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 50px;
-  width: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 105px;
+  gap: 3.125rem;
+  width: 9.375rem;
+  margin: 5vh auto 2vh;
 }
 
 .social-links img {
-  position: relative;
-  width: 40px;
+  width: 1.2rem;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
   z-index: 10;
 }
 
 .social-links img:hover {
   transform: scale(1.2);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-/* home - skills section */
+/* ============== WELCOME - TABLETS (< 421px) ============== */
+@media (min-width: 421px) {
+  .title-container {
+    justify-content: center;
+    margin-top: 20vh;
+  }
+
+  .title-container h1 {
+    font-size: 4em;
+  }
+  .hook-container h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .social-links {
+  margin: 5vh auto 2vh;
+  }
+}
+
+/* ============== WELCOME - DESKTOPS (< 1025px) ============== */
+@media (min-width: 1025px) {
+  .title-container {
+    margin-top: 33vh;
+  }
+
+  .title-container h1 {
+    padding: 2vh 3.5vw;
+    font-size: 5.5em;
+  }
+  .hook-container {
+    padding: 2vh 7.2vw;
+  }
+  .hook-container h2 {
+    font-size: 1.9em;
+    text-align: center;
+  }
+  .social-links {
+  margin: 5vh auto 2vh;
+  }
+  .social-links img {
+  width: 2.3rem;
+  height: auto;
+  }
+}
+
+
+/* ============== HOME - SKILLS SECTION ================*/
+/* ============== MOBILE FIRST (< 421px) ============== */
 .skills {
   background-color: #ffffff;
   color: #06002e;
-  margin-top: -20px;
+  margin-top: -17vh;
 }
 
 .skills-titles {
   text-align: center;
-  padding-top: 40px;
 }
 
 .skills-titles h2 {
-  font-size: 60px;
-  font-family: serif;
-  font-weight: normal;
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 4vh 8vw;
 }
 
 .skills-titles h4 {
-  font-family: sans-serif;
-  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  padding: 2vh 2.5vw;
+}
+
+.skills-categories h3 {
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  margin-top: 1em;
 }
 
 .skills-categories {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.hard-skills-grid, .soft-skills-grid {
+.hard-skills-grid,
+.soft-skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  max-width: 800px;
-  margin: auto;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+  padding-inline: 8vw;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .skill-box {
-  border: solid 1px rgba(6, 0, 46, 0.1);
-  box-shadow: 0 0 10px 0 rgba(6, 0, 46, 0.10);
+  border: 2px solid #06002e;
   color: #06002e;
-  padding: 15px 25px;
-  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.3em;
   text-align: center;
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: sans-serif;
 }
-
 .skill-box:hover {
-  border: solid 1px #06002e;
-  background-color: #06002e;
-  box-shadow: 0 0 20px 10px rgba(6, 0, 46, 0.10);
-  color: #fff;
+  background-color: #5ce1e6;
+  color: #06002e;
   transition: all 0.5s ease;
 }
 
-.skills-divider {
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 5px,
-    #06002e 5px,
-    #06002e 10px
-  );
-  height: auto;
-  margin: 0 20px;
-  opacity: 0.2;
-}
-
 .btn-about-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 50px 0 0 0;
-  padding-bottom: 100px;
+ display: flex;
+ justify-content: center;
+ margin: 3em 0 0;
+ padding-bottom: 3em;
 }
 
 .btn-about {
-  border: 2px solid #06002e;
-  color: #06002e;
-  padding: 10px 10px;
-  width: 200px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+ color: #06002e;
+ padding: 0.6rem;
+ text-decoration: none;
+ font-family: "Montserrat", sans-serif;
+ font-weight: 300;
+ font-size: 1rem;
+ transition: all 0.3s ease-in-out;
 }
 
 .btn-about:hover {
-  background-color: #06002e;
-  color: #fff;
+ color: #5ce1e6;
 }
 
-/* home - projects section */
+
+/* ============== SKILLS - TABLETS (< 421px) ============== */
+@media (min-width: 421px) {
+  .skills-titles h2 {
+  font-size: 3em;
+  padding-bottom: 0;
+  }
+  .skills-categories h3 {
+  font-size: 2em;
+  }
+  .hard-skills-grid,
+  .soft-skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 5vw;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .btn-about {
+    font-size: 1.3rem;
+  }
+}
+
+/* ============== SKILLS - DESKTOPS (< 1025px) ============== */
+@media (min-width: 1025px) {
+  .skills-titles h2 {
+  font-size: 3em;
+  }
+  .skills-categories h3 {
+  font-size: 2em;
+  }
+  .skills-categories {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8vw;
+  }
+  .hard-skills-grid,
+  .soft-skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 0;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+  .btn-about {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ============== HOME - PROJECTS SECTION ============= */
+/* ============== MOBILE FIRST (< 421px) ============== */
 .projects {
   background-color: #06002e;
   color: #ffffff;
-  margin-bottom: 70px;
-  padding-left: 250px;
-  padding-right: 250px;
+  padding: 0 8vw;
+  margin-bottom: 4.375rem;
 }
 
 .projects-title {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .projects-title h2 {
-  font-size: 60px;
-  font-family: serif;
-  font-weight: normal;
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 8vh 0 2vh 0;
 }
 
 /* Card-grid */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   justify-content: center;
 }
 
 .project-card {
+  width: 100%;
+  max-width: 30rem;
   background: #06002e;
-  color: #ffffff;
-  border: #ffffff solid 2px;
-  height: 300px;
-  border-radius: 10px;
+  color: #fff;
+  border: 0.125rem solid #5ce1e6;
+  border-radius: 0.625rem;
   padding: 1rem;
+  height: 21rem;
   text-align: center;
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
   transition: opacity 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
 
+.card-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.card-description {
+  font-size: 0.8em;
+}
+
 .project-card:hover {
   opacity: 0.3;
-  transform: translateY(-4px);
+  transform: translateY(-0.25rem);
 }
 
 .card-thumb {
-  background-color: lightgray;
   width: 100%;
-  height: 160px;
+  height: 8rem;
   object-fit: cover;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
-.card-title {
-  margin: 0.75rem 0 0.5rem;
-  font-size: 1.25rem;
-}
-
-/* overlay - hide and blur background */
+/* overlay – hide and blur background */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -266,33 +320,47 @@
   z-index: 1000;
 }
 
-/* la carte centrale */
+/* modal content */
 .modal-content {
   position: relative;
   background: #06002e;
-  border: #ffffff solid 2px;
-  border-radius: 8px;
-  padding: 1.5rem;
-  max-width: 1200px;
-  max-height: fit-content;
+  border: 0.125rem solid #5ce1e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-width: 20rem;
+  height: fit-content;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  overflow: hidden;
-  font-family: sans-serif;
-  font-weight: lighter;
+  box-shadow: 0 0.625rem 1.5625rem rgba(0,0,0,0.2);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 
 .modal-thumb {
-  background-color: lightgray;
   width: 100%;
-  height: 160px;
+  height: 8rem;
   object-fit: cover;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
+.modal-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.modal-description {
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
 .p-technos {
-  margin-bottom: 50px;
+  font-size: 0.8em;
+  margin-bottom: 2em;
+}
+
+.p-technos span {
+  font-weight: 700;
 }
 
 /* Close button */
@@ -310,189 +378,244 @@
 .modal-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 2rem;
 }
 
-.btn-github-container, .btn-demo-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.btn-github-link, .btn-demo-link {
-  border: 2px solid #ffffff;
+.btn-github-link,
+.btn-demo-link {
   color: #ffffff;
-  padding: 10px 10px;
-  width: 200px;
-  border-radius: 10px;
+  padding: 0.6rem;
   text-decoration: none;
-  font-family: sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
-.btn-github-link:hover, .btn-demo-link:hover {
-  color: #06002e;
-  background-color: #ffffff;
+.btn-github-link:hover,
+.btn-demo-link:hover {
+  color: #5ce1e6;
 }
 
-/* white section */
-#sep {
-  background-color: #ffffff;
-  margin-top: 0;
-  padding: 20px;
+/* ============== PROJECTS - TABLETS (< 421px) ============== */
+@media (min-width: 421px) {
+  .projects-title h2 {
+    font-size: 3em;
+  }
+  .projects-grid {
+    display: grid;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .project-card {
+    max-width: 65vw;
+    height: 19rem;
+  }
+  .card-title {
+    font-size: 1.4em;
+  }
+  .modal-content {
+    max-width: 75vw;
+  }
+  .modal-thumb {
+    height: 15rem;
+  }
 }
 
-/* home - contact section */
+/* ============== PROJECTS - DESKTOPS (< 1025px) ============== */
+@media (min-width: 1025px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 15vh;
+  }
+  .project-card {
+    max-width: 35vw;
+  }
+}
+
+
+/* ============== HOME - LOGOS BANNER ================= */
+/* ============== MOBILE FIRST (< 421px) ============== */
+.trust-container h6 {
+  text-align: center;
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 0 0 2vh 0;
+}
+.logo-marquee {
+    position: relative;
+    padding: 2vh;
+    overflow: hidden;
+    background-color: #5ce1e6;
+  }
+
+  .logo-marquee__track {
+    display: flex;
+    width: calc(200% + 2rem);
+    animation: marquee 20s linear infinite;
+  }
+
+  .logo-marquee__group {
+    display: flex;
+    flex: 0 0 50%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .logo-marquee__group img {
+    max-height: 2.3rem;
+    width: auto;
+    margin: 0 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-25%); }
+  }
+
+/* ============== BAND LOGOS - TABLETS (< 421px) ============== */
+@media (min-width: 421px) {
+  .logo-marquee__group img {
+    max-height: 2.5rem;
+
+  }
+}
+/* ============== BAND LOGOS - DESKTOPS (< 1025px) ============== */
+@media (min-width: 1025px) {
+  .logo-marquee__group img {
+    max-height: 4rem;
+  }
+}
+
+
+/* ============== HOME - CONTACT SECTION ============== */
+/* ============== MOBILE FIRST (< 421px) ============== */
+#contact-section {
+  scroll-margin-top: 1rem;
+}
+
 .contact {
   background-color: #06002e;
   color: #ffffff;
+  padding: 0 8vw;
 }
 
 .contact h2 {
-  font-size: 60px;
-  font-family: serif;
-  font-weight: normal;
-  margin-bottom: 30px;
+  font-family: "Playfair", serif;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 5vh 0 2vh 0;
   text-align: center;
 }
 
 .contact-container {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
 }
 
-/* Map */
 .contact-map {
-  border: solid 1px #ffffff;
-  border-radius: 5px;
-  background-color: rgb(253, 253, 207);
-  width: 430px;
-  height: 430px;
-  margin-top: 174px;
-  margin-bottom: 100px;
+  width: 100%;
+  max-width: 30rem;
+  aspect-ratio: 1 / 1;
+  background-color: #fdfdcf;
+  border: 2px solid #ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 #map {
   width: 100%;
-  height: 430px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  height: 100%;
 }
 
 .infos-container {
-  margin-top: 100px;
-  margin-bottom: 100px;
   width: 100%;
-  max-width: 700px;
-  padding: 20px;
+  max-width: 85vw;
+  text-align: center;
+  padding: 1rem 0;
 }
 
-.infos-container p {
-  font-family: sans-serif;
-  font-weight: lighter;
-}
-
-/* Email copy */
+/* email copy */
 .copy-btn-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
-  padding: 0 10px;
-  padding-left: 0;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.copy-btn-container:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #22cfff;
-  cursor: pointer;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 #email {
-  font-size: 16px;
-  font-weight: bold;
-  color: inherit;
-}
-
-.copy-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  font-weight: 300;
+  word-break: break-all;
 }
 
 .copy-btn img {
-  width: 20px;
-  height: auto;
-}
-
-.copy-btn-container:hover .copy-btn {
-  transform: scale(1.2);
+  width: 1em;
 }
 
 #copy-message {
-  color: green;
-  font-size: 14px;
-  font-weight: bold;
-  margin-left: 10px;
+ color: green;
+ font-family: "Montserrat", sans-serif;
+ font-size: 0.8em;
+ font-weight: 700;
+ margin-left: 0.625rem;
 }
 
-/* Form */
+
+.infos-container > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+}
+
+/* form */
 .contact-form {
   width: 100%;
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 .form-group {
-  width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .form-control {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #5ce1e6;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #fff;
 }
 
 textarea.form-control {
-  height: 150px;
+  height: 8rem;
   resize: vertical;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-  overflow-y: auto;
 }
 
 .btn-submit {
-  border: 2px solid #ffffff;
-  background-color: #22cfff;
-  color: #ffffff;
-  text-align: center;
-  padding: 12px 20px;
-  width: 100%;
-  margin: 40px auto 0 auto;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
   display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.125rem;
+  background-color: #5ce1e6;
+  color: #06002e;
+  border: 2px solid #ffffff;
+  border-radius: 0.625rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-submit:hover {
@@ -500,21 +623,63 @@ textarea.form-control {
   color: #06002e;
 }
 
-/* Form message */
-.hidden {
-  display: none;
-}
-
-.success-message {
-  color: green;
-  font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
-}
-
+/* state messages */
+.hidden { display: none; }
+.success-message,
 .error-message {
-  color: red;
+  font-size: 1rem;
+  margin-top: 0.5rem;
   font-weight: bold;
-  font-size: 16px;
-  margin-top: 10px;
+}
+.success-message {
+  color: #4caf50;
+}
+.error-message {
+  color: #f44336;
+}
+
+
+/* ============== CONTACT SECTION - TABLETS (< 421px) ============== */
+@media (min-width: 421px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 60rem;
+    margin: 0 auto;
+    gap: 3rem;
+  }
+
+  .contact-map {
+    width: 45%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .infos-container {
+    width: 50%;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+/* ============== CONTACT SECTION - DESKTOPS (< 1025px) ============== */
+@media (min-width: 1025px) {
+  .contact {
+    padding: 3rem 2rem;
+  }
+  .contact h2 {
+    padding: 0 0 5vh 0;
+    font-size: 3em;
+  }
+  .contact-container {
+    max-width: 70vw;
+    gap: 4rem;
+  }
+  .contact-map {
+    width: 33%;
+  }
+  .infos-container {
+    width: 45%;
+  }
 }

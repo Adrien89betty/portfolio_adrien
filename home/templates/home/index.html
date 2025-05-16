@@ -14,10 +14,10 @@
 {% endblock extra_head %}
 
 {% block content %}
-<div>
+<div class="main-container">
     <div class="welcome">
       <div class="title-container">
-        <img src="{% static 'home/images/title_homepage.svg' %}" alt="homepage title">
+        <h1>Développeur back-end <span>{{ "{" }}Python{{ "}" }}</span></h1>
       </div>
       <div class="hook-container">
         <h2>I help clients design their dreams, and then I make those dreams come true.</h2>
@@ -26,8 +26,6 @@
         <a href="https://github.com/Adrien89betty" target="_blank"><img src="{% static 'home/images/github_logo.svg' %}" alt="Github"></a>
         <a href="https://www.linkedin.com/in/adrienleveille/" target="_blank"><img src="{% static 'home/images/linkedin_logo.svg' %}" alt="Linkedin"></a>
       </div>
-      <div class="triangle triangle-left"></div>
-      <div class="triangle triangle-right"></div>
     </div>
 
     <div class="skills">
@@ -44,7 +42,6 @@
             </div>
           </div>
         </div>
-        <div class="skills-divider"></div>
         <div class="soft-skills">
           <h3>Soft skills</h3>
           <div class="soft-skills-grid">
@@ -55,7 +52,7 @@
         </div>
       </div>
       <div class="btn-about-container">
-        <a href="{% url "about:about" %}" class="btn-about">En savoir plus</a>
+        <a href="{% url "about:about" %}" class="btn-about">{{ "{" }} En savoir plus {{ "}" }}</a>
       </div>
     </div>
 
@@ -69,8 +66,8 @@
           <div class="card-thumb">
             <img v-if="project.image_url" :src="project.image_url" alt="Illustration du projet" class="card-img"/>
           </div>
-          <h3>{{ project.title }}</h3>
-          <p>{{ project.description.substring(0, 300) }}…</p>
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-description">{{ project.description.substring(0, 300) }}…</p>
         </div>
       </div>
 
@@ -81,15 +78,15 @@
           <div class="modal-thumb">
             <img v-if="modalProject.image_url" :src="modalProject.image_url" alt="Illustration du projet" class="modal-img"/>
           </div>
-          <h2>{{ modalProject.title }}</h2>
-          <p>{{ modalProject.description }}</p>
-          <p class="p-technos"><strong>Technologies utilisées :</strong> {{ modalProject.technologies.join(", ") }}</p>
+          <h2 class="modal-title">{{ modalProject.title }}</h2>
+          <p class="modal-description">{{ modalProject.description }}</p>
+          <p class="p-technos"><span>Technologies utilisées :</span> {{ modalProject.technologies.join(", ") }}</p>
           <div class="modal-links">
             <div class="btn-github-container">
-              <a :href="modalProject.github_link" target="_blank" class="btn-github-link">Voir sur GitHub</a>
+              <a :href="modalProject.github_link" target="_blank" class="btn-github-link">{{ "{" }} Voir sur GitHub {{ "}" }}</a>
             </div>
             <div class="btn-demo-container">
-              <a v-if="modalProject.demo_link" :href="modalProject.demo_link" target="_blank" class="btn-demo-link">Démo</a>
+              <a v-if="modalProject.demo_link" :href="modalProject.demo_link" target="_blank" class="btn-demo-link">{{ "{" }} Démo {{ "}" }}</a>
             </div>
           </div>
         </div>
@@ -98,9 +95,28 @@
     </div>
 
     <div id="sep">
+      <div class="logo-marquee">
+        <div class="trust-container">
+          <h6>Ils m'ont fait confiance</h6>
+        </div>
+        <div class="logo-marquee__track">
+          <div class="logo-marquee__group">
+            <img src="{% static 'home/images/idside.png' %}" alt="logo 1">
+            <img src="{% static 'home/images/vcm.png' %}" alt="logo 2">
+            <img src="{% static 'home/images/ulk.png' %}" alt="logo 3">
+            <img src="{% static 'home/images/thanks.jpg' %}" alt="logo 4">
+          </div>
+          <div class="logo-marquee__group">
+            <img src="{% static 'home/images/idside.png' %}" alt="logo 1">
+            <img src="{% static 'home/images/vcm.png' %}" alt="logo 2">
+            <img src="{% static 'home/images/ulk.png' %}" alt="logo 3">
+            <img src="{% static 'home/images/thanks.jpg' %}" alt="logo 4">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact-section">
       <h2>Contactez-moi</h2>
       <div class="contact-container">
         <div class="contact-map">
