@@ -1,11 +1,19 @@
+# cv/models.py
 from django.db import models
+from django.core.validators import FileExtensionValidator
 
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+    logo = models.FileField(
+        upload_to='skill_logos/',
+        validators=[FileExtensionValidator(allowed_extensions=['svg'])],
+        help_text="svg file for skill image"
+    )
 
     def __str__(self):
         return self.name
+
 
 
 class Certification(models.Model):
