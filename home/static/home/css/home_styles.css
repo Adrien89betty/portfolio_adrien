@@ -129,25 +129,20 @@
   padding: 2vh 2.5vw;
 }
 
-.skills-categories h3 {
-  font-family: "Playfair", serif;
-  font-weight: 300;
-  font-size: 1.5em;
-  margin-bottom: 1.5em;
-  margin-top: 1em;
-}
-
-.skills-categories {
+.skills-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.hard-skills-grid,
-.soft-skills-grid {
+.hard-skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;  
+  justify-items: center;
+
+
   gap: 1.875rem;
   padding-inline: 8vw;
   max-width: 100%;
@@ -155,15 +150,31 @@
 }
 
 .skill-box {
-  border: 2px solid #06002e;
-  color: #06002e;
-  padding: 0.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(6, 0, 46, 0.3);
+  padding: 0.8rem;
   border-radius: 0.3em;
-  text-align: center;
-  font-weight: lighter;
-  font-size: 1.25rem;
-  font-family: sans-serif;
+  cursor: default;
+  width: 80px;
 }
+
+.skill-logo {
+  width: 40px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  margin: 0;
+  font-size: 0.65rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color: #06002e;
+  text-align: center;
+}
+
 .skill-box:hover {
   background-color: #5ce1e6;
   color: #06002e;
@@ -195,18 +206,26 @@
 /* ============== SKILLS - TABLETS (< 421px) ============== */
 @media (min-width: 421px) {
   .skills-titles h2 {
-  font-size: 3em;
-  padding-bottom: 0;
+    font-size: 3em;
+    padding-bottom: 0;
   }
-  .skills-categories h3 {
-  font-size: 2em;
-  }
-  .hard-skills-grid,
-  .soft-skills-grid {
+  .hard-skills-grid {
     grid-template-columns: repeat(3, 1fr);
     padding-inline: 5vw;
     max-width: 60rem;
     margin: 0 auto;
+    gap: 3.5em;
+  }
+  .skill-box {
+    width: 100px;
+  }
+  .skill-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+  .skill-name {
+    font-size: 0.8rem;
   }
   .btn-about {
     font-size: 1.3rem;
@@ -218,20 +237,20 @@
   .skills-titles h2 {
   font-size: 3em;
   }
-  .skills-categories h3 {
-  font-size: 2em;
-  }
-  .skills-categories {
-    flex-direction: row;
-    justify-content: center;
-    gap: 8vw;
-  }
-  .hard-skills-grid,
-  .soft-skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .hard-skills-grid {
+    grid-template-columns: repeat(5, 1fr);
     padding-inline: 0;
     max-width: 50rem;
     margin: 0 auto;
+    gap: 4.5em;
+  }
+  .skill-box {
+    width: 120px;
+  }
+  .skill-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0.5rem;
   }
   .btn-about {
     font-size: 1.1rem;

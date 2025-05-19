@@ -31,23 +31,13 @@
     <div class="skills">
       <div class="skills-titles">
         <h2>Skills</h2>
-        <h4>En tant que développeur back-end, voici mes compétences...</h4>
+        <h4>En tant que développeur back-end, voici mes principales compétences...</h4>
       </div>
-      <div class="skills-categories">
-        <div class="hard-skills">
-          <h3>Hard skills</h3>
-          <div class="hard-skills-grid">
-            <div v-for="skill in hardSkills" :key="skill.id" v-text="skill.name" class="skill-box">
-              {{ skill.name }}
-            </div>
-          </div>
-        </div>
-        <div class="soft-skills">
-          <h3>Soft skills</h3>
-          <div class="soft-skills-grid">
-            <div v-for="skill in hardSkills" :key="skill.id" v-text="skill.name" class="skill-box">
-              {{ skill.name }}
-            </div>
+      <div class="skills-container">
+        <div class="hard-skills-grid">
+          <div v-for="skill in hardSkills" :key="skill.id" class="skill-box">
+            <img v-if="skill.logo" :src="skill.logo" :alt="skill.name" class="skill-logo"/>
+            <p class="skill-name" v-text="skill.name"></p>
           </div>
         </div>
       </div>
