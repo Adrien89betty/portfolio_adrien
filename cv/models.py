@@ -5,10 +5,9 @@ from django.core.validators import FileExtensionValidator
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
-    logo = models.FileField(
-        upload_to='skill_logos/',
-        validators=[FileExtensionValidator(allowed_extensions=['svg'])],
-        help_text="svg file for skill image"
+    logo = models.CharField(
+        max_length=100,
+        help_text="File name in cv/static/cv/images/"
     )
 
     def __str__(self):

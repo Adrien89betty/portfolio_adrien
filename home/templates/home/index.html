@@ -36,7 +36,12 @@
       <div class="skills-container">
         <div class="hard-skills-grid">
           <div v-for="skill in hardSkills" :key="skill.id" class="skill-box">
-            <img v-if="skill.logo" :src="skill.logo" :alt="skill.name" class="skill-logo"/>
+            <img
+              v-if="skill.logo_url"
+              :src="skill.logo_url"
+              :alt="skill.name"
+              class="skill-logo"
+            />
             <p class="skill-name" v-text="skill.name"></p>
           </div>
         </div>
@@ -54,7 +59,12 @@
       <div class="projects-grid">
         <div v-for="project in projects" :key="project.id" class="project-card" @click="openModal(project.id)" role="button" tabindex="0">
           <div class="card-thumb">
-            <img v-if="project.image_url" :src="project.image_url" alt="Illustration du projet" class="card-img"/>
+            <img
+              v-if="project.image_url"
+              :src="project.image_url"
+              alt="Illustration du projet"
+              class="card-img"
+            />
           </div>
           <h3 class="card-title">{{ project.title }}</h3>
           <p class="card-description">{{ project.description.substring(0, 300) }}…</p>

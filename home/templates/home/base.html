@@ -8,9 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+KR:wght@200..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <script>
+      window.STATIC_URL = "{% get_static_prefix %}";
+    </script>
     <title>
       {% block title %}
-        Portfolio
+        Portfolio - Adrien L'éveillé
       {% endblock %}
     </title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -87,27 +90,25 @@
           console.log(this.submitButtonText)
           // Fecth skills from the API
           fetch("/cv/api/skills/")
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Erreur dans la requête API");
-              }
-              return response.json();
+            .then(res => res.json())
+            .then(data => {
+              this.hardSkills = data.map(skill => ({
+                ...skill,
+                logo_url: `${window.STATIC_URL}cv/images/${skill.logo}`
+              }));
+              console.log("hardSkills:", this.hardSkills);
             })
-            .then((data) => {
-              this.hardSkills = data;
-            })
-            .catch((error) =>
-              console.error("Erreur lors du chargement des compétences :", error)
-            );
+            .catch(err => console.error(err));
 
           // fecth projects from the API
           fetch("/projects/api/projects/")
-            .then(r => r.json())
+            .then(res => res.json())
             .then(data => {
-              this.projects = data.map(p => ({
-                ...p,
-                image_url: p.image || null
+              this.projects = data.map(proj => ({
+                ...proj,
+                image_url: `${window.STATIC_URL}projects/images/${proj.image}`
               }));
+              console.log("projects:", this.projects);
             })
             .catch(err => console.error(err));
         },
