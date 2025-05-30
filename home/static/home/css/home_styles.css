@@ -57,6 +57,32 @@
   transition: transform 0.3s ease;
 }
 
+.scroll-cta-container {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30vh;
+  animation: pulse 2s infinite;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.scroll-cta-container img {
+  width: 30px;
+  height: auto;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+#scroll-cta.hidden {
+  opacity: 0;
+}
+
 /* ============== WELCOME - TABLETS (< 421px) ============== */
 @media (min-width: 421px) {
   .title-container {
@@ -75,6 +101,10 @@
   .social-links {
   margin: 5vh auto 2vh;
   }
+  .scroll-cta-container img {
+  width: 40px;
+  height: auto;
+  }
 }
 
 /* ============== WELCOME - DESKTOPS (< 1280px) ============== */
@@ -84,7 +114,10 @@
   }
   .social-links img {
   width: 1.8rem;
-}
+  }
+  .scroll-cta-container {
+    margin-top: 12vh;
+  }
 }
 
 /* ============== WELCOME - DESKTOPS (< 1536px) ============== */
@@ -110,6 +143,9 @@
   .social-links img {
   width: 2.3rem;
   height: auto;
+  }
+  .scroll-cta-container {
+    margin-top: 12vh;
   }
 }
 

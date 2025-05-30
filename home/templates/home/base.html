@@ -177,6 +177,14 @@
         });
       });
     </script>
+    <script>
+      window.addEventListener('scroll', () => {
+        const cta = document.getElementById('scroll-cta');
+        if (window.scrollY > 250) {
+          cta.classList.add('hidden');
+        }
+      });
+    </script>
   {% block extra_js %}
   {% endblock %}
   </body>
