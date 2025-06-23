@@ -14,7 +14,7 @@ class Command(BaseCommand):
 
         project1 = Project.objects.create(
                 title="Ce Portfolio",
-                description="""Ce portfolio est un site web personnel conçu pour présenter mon profil de développeur back-end, mes compétences techniques, mes projets réalisés ainsi qu’un moyen de me contacter et il est entièrement responsive.
+                description="""Ce portfolio est un site web personnel conçu pour présenter mon profil de développeur full stack, mes compétences techniques, mes projets réalisés ainsi qu’un moyen de me contacter et il est entièrement responsive.
 
                 Sur le plan de l’architecture, le site repose sur une séparation entre le back-end et le front-end. Le back-end est développé avec Django et expose les données via des API REST construites avec Django REST Framework.
 
