@@ -20,24 +20,33 @@
     <div class="about-content">
       <h1>Qui suis-je ?</h1>
       <p>
-        🚧 Cette page est encore en construction…
-      Revenez bientôt pour découvrir qui je suis ! 😊
+        Eh bien, avant d’écrire des lignes de code, j’ai travaillé pendant une quinzaine d’années dans l’univers du spectacle vivant, en tant que régisseur son <span class="italic">(mais j’imagine que le terme “ingé son” vous est certainement beaucoup plus familier 😉)</span>. <br>C’était un métier technique, exigeant, où la rigueur, l’autonomie et la capacité à résoudre des problèmes faisaient partie du quotidien. Ce que j’aimais par-dessus tout ? Être au cœur du système, “avoir les mains dedans” et faire en sorte que tout sonne parfaitement !
       </p>
-      <p class="cta">
-        En attendant, vous pouvez télécharger mon CV ou m'envoyer un message 👇
+      <p>
+        Cet appétit pour la technique m’a ensuite mené vers un nouveau terrain de jeu : <span class="bold">la programmation. 💻<br></span> Après un changement de vie radical, j’ai ressenti le besoin de me réinventer professionnellement, tout en gardant ce lien avec la technique et les challenges qu’un tel univers peut apporter. C’est ainsi que j’ai entamé une reconversion vers le <span class="bold">développement web Full Stack</span>, une discipline dans laquelle je m’épanouis pleinement aujourd’hui.
       </p>
-    </div>
-  </div>
-  <div class="btns-container">
-    <div class="btn-cv-container">
-      <a href="{% static 'cv/files/cv_adrien_leveille_backend_230525.pdf' %}" download class="btn-cv">
-        Télécharger mon CV
-      </a>
-    </div>
-    <div class="btn-contact-container">
-      <a href="{% url 'home:index' %}#contact-form" class="btn-contact">
-        Me contacter
-      </a>
+      <p>
+        J’ai mis le nez dans la programmation un peu comme on met les mains dans un moteur... par curiosité, pour voir comment ça marche… et parce que ça me démangeait depuis longtemps. J’ai commencé seul, avec des tutos, des docs, des erreurs <span class="italic">(beaucoup d’erreurs !)</span>, et aussi... de nombreuses entorses au cerveau ! 🤯
+      </p>
+      <p>
+        J'ai ensuite poursuivi avec des formations plus cadrées comme <a href="https://www.lewagon.com/fr" target="_blank">Le Wagon</a> <span       class="italic">(niveau RNCP Bac+4)</span> et des certifications <span class="italic">(<a href="https://pythoninstitute.org/" target="_blank">Python Institute</a>, etc.)</span>, histoire de mettre un peu d’ordre dans tout ce joyeux bazar !
+      </p>
+      <p>
+        Très vite, j’ai eu un coup de cœur pour <span class="bold">Python</span> ! Une syntaxe claire, un écosystème très riche, polyvalent... bref, le langage parfait pour résoudre des problèmes complexes de manière simple et élégante.
+      </p>
+      <div class="btn-cv-container">
+        <a href="{% static 'cv/files/cv_adrien_leveille_fullstack_230625.pdf' %}" download class="btn-cv">
+          Télécharger mon CV
+        </a>
+      </div>
+      <p>
+        Si vous pensez qu’on pourrait faire de belles choses ensemble, parlons-en ! 👇
+      </p>
+      <div class="btn-contact-container">
+        <a href="{% url 'home:index' %}#contact-form" class="btn-contact">
+          Me contacter
+        </a>
+      </div>
     </div>
   </div>
   {% endblock content %}

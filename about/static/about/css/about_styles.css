@@ -26,33 +26,37 @@
 
 .about-content p {
   color: #ffffff;
-  line-height:1.6;
+  line-height:1.7;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  margin-bottom: 1.2rem;
 }
 
-.about-content .cta {
-  margin-top: 2em;
+.italic {
+  font-style: italic;
 }
 
-/* bannière “construction” */
-.under-construction {
-  margin-top:1rem;
-  padding: .75rem 1rem;
-  background: rgba(255,255,255,.1);
-  border: .0625rem dashed #5ce1e6;
-  border-radius: .5rem;
-  font-size: .9rem;
-  text-align:center;
+.bold {
+  font-weight: bold;
 }
 
-/* boutons */
-.btns-container {
+.about-content p a {
+  text-decoration: none;
+  color: #5ce1e6;
+  transition: all ease 0.3s;
+}
+
+.about-content p a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* buttons */
+.btn-cv-container, .btn-contact-container {
   display:flex;
-  flex-direction:column;
-  gap: 1rem;
-  padding: 0rem 4rem 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
 .btn-cv {
@@ -60,11 +64,11 @@
   text-align:center;
   text-decoration:none;
   padding: 0.5rem 2rem;
-  border:.125rem solid #fff;
-  border-radius:.5rem;
+  border: 2px solid #fff;
+  border-radius: 5px;
   font-family: "Montserrat", sans-serif;
   font-size:1rem;
-  font-weight:300;
+  font-weight: 400;
   background: #5ce1e6;
   color:#06002e;
   transition: background .3s, color .3s;
@@ -74,17 +78,16 @@
   display:block;
   text-align:center;
   text-decoration:none;
-  padding: 0.5rem 2rem;
-  border:.125rem solid #fff;
-  border-radius:.5rem;
+  padding: 0.5rem 3.7rem;
+  border: 2px solid #fff;
+  border-radius: 5px;
   font-family: "Montserrat", sans-serif;
   font-size:1rem;
-  font-weight:300;
+  font-weight:400;
   background: #06002e;
   color:#fff;
   transition: background .3s, color .3s;
 }
-
 
 .btn-cv:hover, .btn-contact:hover {
   background:#fff;
@@ -94,37 +97,33 @@
 
 /* ============== ABOUT - TABLETS (< 421px) ============== */
 @media (min-width: 421px) {
+  .about-content {
+    margin-top: 3vh;
+  }
+}
+
+/* ============== WELCOME - DESKTOPS (< 1280px) ============== */
+@media (min-width: 1280px) {
+  .about-content {
+    margin-top: 2vh;
+    padding: 0 3vw;
+  }
   .about-content h1 {
-
-  margin-bottom: 2rem;
-  margin-top: 5rem;
-}
-.btns-container {
-  margin-bottom: 37vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  font-size: 2.3em;
   }
 }
 
 
-/* ============== ABOUT - DESKTOPS (< 1025px) ============== */
-@media (min-width: 1025px) {
-  .about-container {
-    margin-top: 8vh;
+/* ============== WELCOME - DESKTOPS (< 1536px) ============== */
+@media (min-width: 1536px) {
+  .about-content {
+    margin-top: 4vh;
+    padding: 0 5vw;
   }
-  .about-photo img {
-  width: 12rem;
-}
-
-.about-content h1 {
-  font-size: 4em;
-}
-
-.about-content p {
-  font-size: 1.3em;
-}
-  .btns-container {
-  margin-bottom: 20vh;
+  .about-content h1 {
+  font-size: 2.5em;
+  }
+  .about-content p {
+  font-size: 0.9em;
   }
 }

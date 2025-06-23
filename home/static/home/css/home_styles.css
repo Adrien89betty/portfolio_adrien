@@ -383,6 +383,7 @@
 
 .card-description {
   font-size: 0.8em;
+  line-height: 1.5;
 }
 
 .project-card:hover {
@@ -512,6 +513,7 @@
   }
   .modal-content {
     max-width: 75vw;
+    line-height: 1.7;
   }
   .modal-thumb {
     height: 15rem;
