@@ -10,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         Project.objects.all().delete()
         fake = Faker()
-        IMG_FILES = ["img_code.jpg", "img_portfolio.jpg", "img_scrapping.jpg"]
+        IMG_FILES = ["img_code.jpg", "img_portfolio.jpg", "img_scrapping.jpg", "img_desktop.jpeg"]
 
         project1 = Project.objects.create(
                 title="Ce Portfolio",
@@ -45,11 +45,13 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(f"project « {project2.title} » recorded in database."))
 
         project3 = Project.objects.create(
-                title="Un autre ;-)",
-                description="Le projet sera visible prochainement",
-                technologies=["..."],
-                github_link=fake.url(),
-                demo_link=fake.url(),
-                image=IMG_FILES[0]
+                title="File Manager",
+                description="""FileManager est un utilitaire macOS léger qui organise automatiquement le contenu de votre Bureau en classant vos fichiers par type (images, vidéos, audios, PDF, documents texte, Excel et autres).
+
+                Il crée les dossiers de destination s’il ne les trouve pas, gère les collisions de noms et fonctionne nativement sur Mac Intel et Apple Silicon grâce à son exécutable.""",
+                technologies=["Python", "Pyinstaller"],
+                github_link="https://github.com/Adrien89betty/file-manager",
+                demo_link="https://github.com/Adrien89betty/file-manager/releases",
+                image=IMG_FILES[3]
             )
         self.stdout.write(self.style.SUCCESS(f"project « {project3.title} » recorded in database."))
