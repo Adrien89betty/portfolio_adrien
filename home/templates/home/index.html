@@ -136,8 +136,11 @@
           </div>
           <p>Où si vous préférez, directement via ce formulaire. 👇</p>
           <div class="contact-form">
+            {% load honeypot %}
             <form id="contact-form" method="POST" action="{% url 'contact:contact_submit' %}">
                 {% csrf_token %}
+
+                {% render_honeypot_field %}  
 
                 <div class="form-group">
                     {{ form.name }}
