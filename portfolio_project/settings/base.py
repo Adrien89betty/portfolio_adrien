@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Third-party apps.
     'rest_framework',
     'django_extensions',
+    'honeypot',
 ]
 
 MIDDLEWARE = [
@@ -103,3 +104,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = PROJECT_ROOT / 'media'
 
 MEDIA_URL = '/media/'
+
+
+# django-honeypot settings
+HONEYPOT_FIELD_NAME = "téléphone"
+
+HONEYPOT_RESPONDER = "contact.views.honeypot_json_ok"

@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.core.mail import EmailMessage
+from honeypot.decorators import check_honeypot
+from django.http import JsonResponse
 
 
 class ContactMessageViewSet(viewsets.ModelViewSet):
@@ -14,11 +16,16 @@ class ContactMessageViewSet(viewsets.ModelViewSet):
     serializer_class = ContactMessageSerializer
 
 
+def honeypot_json_ok(request, fieldname=None):
+    return JsonResponse({"success": True}, status=200)
+
+
 def contact_form(request):
     # Contact form page.
     return render(request, 'contact/contact.html')
 
 
+@check_honeypot
 def contact_view(request):
     if request.method == "POST":
         form = ContactMessageForm(request.POST)
@@ -40,7 +47,7 @@ def contact_view(request):
                 reply_to=[cd['email']],
             )
             email.send(fail_silently=False)
-            
+
             return JsonResponse({"success": True, "message": "Votre message a bien été envoyé !"})
         else:
             return JsonResponse({"success": False, "message": "Veuillez corriger les erreurs du formulaire."})
